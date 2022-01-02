@@ -1,0 +1,16 @@
+{
+  "name": "react-learning",
+  "version": "1.0.0",
+  "main": "index.tsx",
+  "repository": "https://github.com/Thien-An-Ngo/react-learning.git",
+  "author": "tianen <tha.ngo@icloud.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "-": "^0.0.1",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "react-dom": "^17.0.2",
+    "save": "^2.4.0"
+  }
+}
