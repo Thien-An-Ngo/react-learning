@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/thienan/.nvm/versions/node/v12.19.0/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js add parcel-bundler – save-dev
+  /Users/thienan/.nvm/versions/node/v12.19.0/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js add react react-dom @types/react @types/react-dom – save
 
 PATH: 
   /Users/thienan/Library/Python/3.9/bin:/Applications/Postgres.app/Contents/Versions/9.3/bin:/Users/thienan/.nvm/versions/node/v12.19.0/bin:/Users/thienan/.npm-packages/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/thienan/.go/bin:/usr/local/opt/go/libexec/bin
@@ -27,7 +27,7 @@ npm manifest:
   {
     "name": "react-learning",
     "version": "1.0.0",
-    "main": "index.ts",
+    "main": "index.tsx",
     "repository": "https://github.com/Thien-An-Ngo/react-learning.git",
     "author": "tianen <tha.ngo@icloud.com>",
     "license": "MIT",
@@ -36,8 +36,17 @@ npm manifest:
       "-": "^0.0.1",
       "@types/react": "^17.0.38",
       "@types/react-dom": "^17.0.11",
+      "react": "^17.0.2",
       "react-dom": "^17.0.2",
       "save": "^2.4.0"
+    },
+    "scripts": {
+      "start": "parcel src/index.html",
+      "dev": "parcel index.html --out-dir build/debug",
+      "build": "parcel build src/index.html"
+    },
+    "devDependencies": {
+      "typescript": "^4.5.4"
     }
   }
 
@@ -168,6 +177,14 @@ Lockfile:
       object-assign "^4.1.1"
       scheduler "^0.20.2"
   
+  react@^17.0.2:
+    version "17.0.2"
+    resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
+    integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
+    dependencies:
+      loose-envify "^1.1.0"
+      object-assign "^4.1.1"
+  
   save@^2.4.0:
     version "2.4.0"
     resolved "https://registry.yarnpkg.com/save/-/save-2.4.0.tgz#af93ff9b3d7a41d0aff49a23433870613a460f9b"
@@ -205,3 +222,8 @@ Lockfile:
     version "2.3.8"
     resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
     integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
+  
+  typescript@^4.5.4:
+    version "4.5.4"
+    resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.4.tgz#a17d3a0263bf5c8723b9c52f43c5084edf13c2e8"
+    integrity sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==
