@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 export const Nav = styled.nav`
   font-family: sans-serif;
@@ -10,7 +10,7 @@ export const Nav = styled.nav`
   height: 64px;
   box-shadow: #888 0 3px 12px 4px;
   background-color: ${props => props.theme.colors.surface};
-  color: inherit;
+  color: ${props => props.theme.colors.textColor1};
   z-index: 100;
 `
 
@@ -29,6 +29,11 @@ export const TaskLeft = styled.div`
   padding: 12px 0 12px 24px;
   justify-content: flex-start;
   justify-self: flex-start;
+
+  @media screen and (max-width: 576px) {
+    width: 100%;
+    justify-content: space-between;
+  }
 `
 
 export const TaskMid = styled.div`
@@ -41,6 +46,10 @@ export const TaskMid = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0;
+  
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const TaskRight = styled.div`
@@ -49,6 +58,10 @@ export const TaskRight = styled.div`
   justify-content: flex-end;
   justify-self: flex-end;
   height: 100%;
+
+  @media screen and (max-width: 576px) {
+    display: none;
+  }
 `
 
 export const LogoDiv = styled.div`
@@ -79,7 +92,7 @@ export const Logo = styled.h4`
   margin: 0;
 `
 
-export const Brand = styled.h2`
+export const Brand = styled.h1`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -89,6 +102,7 @@ export const Brand = styled.h2`
   order: 1;
   flex-grow: 0;
   margin: 0;
+  color: ${props => props.theme.colors.textColor};
 `
 
 export const Timestamp = styled.h1`
@@ -97,6 +111,7 @@ export const Timestamp = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: ${props => props.theme.colors.textColor2};
 `
 
 export const TaskItem = styled.div`
@@ -106,6 +121,9 @@ export const TaskItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  &:hover {
+    color: ${props => props.theme.colors.textColor2};
+  }
 `
 
 export const HoverDiv = styled.div`
@@ -138,9 +156,29 @@ export const TaskUserIcon = styled.img`
   border-radius: 50%;
 `
 
-export const TaskUsername = styled.h4`
-  margin: 0 0 0 10px;
+export const TaskUsername = styled.h3`
+  margin: 2px 0 2px 10px;
+  font-style: normal;
+  transition: color 0.5s;
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid ${props => props.theme.colors.surface};
+  }
+  &::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid ${props => props.theme.colors.textColor1};
+    width: 0;
+    transition: width .25s ease-in-out;
+  }
   &:hover {
-    
+    margin: 0 0 0 10px;
+    color: ${props => props.theme.colors.textColor2};
+    &::after {
+      width: 100%;
+      border-color: ${props => props.theme.colors.textColor2};
+    }
   }
 `

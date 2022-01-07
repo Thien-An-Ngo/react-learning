@@ -1,9 +1,9 @@
 import * as React from "react"
-import { MainContainer } from "./globalstyles"
+import {GlobalStyles, MainContainer } from "./globalstyles"
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {Dashboard} from "./containers/Dashboard";
 import {Main} from "./containers/Main";
-import {Taskbar} from "./components/Taskbar";
+import {Taskbar} from "./components/Taskbar/Taskbar";
 import {useEffect, useState} from "react";
 import {ThemeProvider} from "styled-components";
 import lightTheme from './themes/light'
@@ -24,6 +24,7 @@ export function App() {
 
     return(
         <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+            <GlobalStyles />
             <MainContainer>
                 <BrowserRouter>
                     <Taskbar isDarkMode={isDarkMode}/>

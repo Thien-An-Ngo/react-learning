@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { BiSearchAlt2 } from 'react-icons/bi'
 import { BsGear, BsGearFill } from 'react-icons/bs'
 import { FaRegUserCircle } from 'react-icons/fa'
+import '../../assets/scss/breakpoints.scss'
 
 interface TaskbarProps {
     isDarkMode: boolean
@@ -60,7 +61,7 @@ export const Taskbar = (props: TaskbarProps) => {
                         HURZ
                     </Brand>
                 </TaskLeft>
-                <TaskMid>
+                <TaskMid className={"sm-show"}>
                     <Timestamp>
                         {
                             date.getHours().toString().padStart(2, '0')

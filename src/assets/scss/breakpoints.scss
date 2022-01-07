@@ -1,0 +1,25 @@
+@import '_variables';
+
+// Source mixins
+
+@mixin media-breakpoint-down($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    display: none;
+  }
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    display: none;
+  }
+}
+
+@each $breakpoint in $grid-breakpoints {
+  .#{$breakpoint}-show {
+    @include media-breakpoint-up($breakpoint);
+  }
+  .#{$breakpoint}-hide {
+    @include media-breakpoint-down($breakpoint);
+  }
+}
+

@@ -1,7 +1,7 @@
 import * as React from "react";
 import {ReactChildren} from "react";
 import styled from "styled-components";
-import {Taskbar} from "../components/Taskbar";
+import {Taskbar} from "../components/Taskbar/Taskbar";
 
 interface MainProps{
     children?: React.ReactNode;
